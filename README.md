@@ -15,7 +15,7 @@ Meet AI-ATHARVA: The sarcastic AI that's programmed with one mission - convince 
 
 - 🤖 **AI-Powered Responses** - Comprehensive technical explanations with real-world context
 - 🎨 **Stunning Animations** - Matrix effects, progress bars, fireworks, and ASCII art
-- 📚 **Educational Content** - Learn about technologies while exploring Atharva's expertise
+- 📚 **Educational Content** - Learn about technologies while exploring my expertise
 - ⚡ **Slash Commands** - Quick access to specific information
 - 🎭 **Sarcastic AI Personality** - Entertainment meets professional showcase
 
@@ -136,7 +136,7 @@ Ready to hire for Summer 2025?
 - 🥈 AI Odyssey 2024 - 2nd place nationally
 - 👑 Top 25/1000+ intern at Meta Craftlab
 - 📚 Published research at IGI Global
-- 📈 4000+ LinkedIn follower growth
+- 📈 1000+ LinkedIn follower growth
 - 🚀 25+ GitHub repositories
 
 ## 🤝 Contributing
