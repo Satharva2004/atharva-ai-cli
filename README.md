@@ -129,7 +129,6 @@ Ready to hire for Summer 2025?
 - **Email**: [satharva2004@gmail.com](mailto:satharva2004@gmail.com)
 - **LinkedIn**: [Atharva Sawant](https://www.linkedin.com/in/satharva2004/)
 - **GitHub**: [Satharva2004](https://github.com/Satharva2004)
-- **Phone**: [+91 9082944120](tel:+919082944120)
 
 ## 🏆 Highlights
 
