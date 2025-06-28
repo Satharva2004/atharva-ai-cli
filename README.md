@@ -7,7 +7,7 @@
 
 > **The most interactive, AI-powered resume CLI in the universe!** 🚀
 
-Meet AI-ATHARVA: The sarcastic AI that's programmed with one mission - convince you that Atharva Sawant is your next star hire for Summer 2025 internships!
+Meet AI-ATHARVA: The sarcastic AI that's programmed with one mission - convince you that Atharva Sawant is your next star hire!
 
 ## ✨ Features
 
