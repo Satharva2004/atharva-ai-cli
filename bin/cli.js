@@ -365,17 +365,21 @@ class AIAtharvaClient {
   async showSplashScreen() {
     console.clear();
     
-    // Create pixelated GEMINI-style header exactly like the image
-    const geminiHeader = `
- ██████╗ ███████╗███╗   ███╗██╗███╗   ██╗██╗
-██╔════╝ ██╔════╝████╗ ████║██║████╗  ██║██║
-██║  ███╗█████╗  ██╔████╔██║██║██╔██╗ ██║██║
-██║   ██║██╔══╝  ██║╚██╔╝██║██║██║╚██╗██║██║
-╚██████╔╝███████╗██║ ╚═╝ ██║██║██║ ╚████║██║
- ╚═════╝ ╚══════╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝
+    // Create pixelated >ATHARVA-CLI header with same gradient style
+    const atharvaHeader = `
+ ▄████████▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█         █                                                                █
+█         █   ► ATHARVA-CLI                                                █
+█         █                                                                █
+█         █   AI-POWERED INTERACTIVE RESUME                                █
+█         █   BUILT WITH GOOGLE GEMINI                                     █
+█         █                                                                █
+█         █   Use slash commands: /resume /skills /contact /github         █
+█         █   Ask questions: "Tell me about Node.js" or "Why hire him?"    █
+ ▀████████▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 `;
     
-    console.log(gradient(['#00D4FF', '#7B68EE', '#9370DB'])(geminiHeader));
+    console.log(gradient(['#00D4FF', '#7B68EE', '#9370DB'])(atharvaHeader));
     await AnimationEngine.sleep(800);
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "ai-atharva-cli",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "🤖 Gemini AI-powered interactive resume CLI with real AI responses! Features Google Gemini integration, comprehensive technical explanations, slash commands, and the exact Gemini CLI design. Perfect for showcasing Atharva Sawant's skills to Summer 2025 recruiters.",
   "main": "index.js",
   "bin": {
