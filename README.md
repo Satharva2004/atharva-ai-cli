@@ -79,7 +79,13 @@ cd atharva-ai-cli
 npm install
 ```
 
-2. **Customize Data**
+2. **Setup Environment Variables**
+Create a `.env` file in the root directory:
+```bash
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+3. **Customize Data**
 Edit `lib/data/resume.js` with your information:
 ```javascript
 const resumeData = {
@@ -98,7 +104,7 @@ const resumeData = {
 };
 ```
 
-3. **Update Package**
+4. **Update Package**
 Edit `package.json`:
 ```json
 {
@@ -109,7 +115,7 @@ Edit `package.json`:
 }
 ```
 
-4. **Publish**
+5. **Publish**
 ```bash
 npm login
 npm publish
@@ -154,7 +160,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 **Made with ❤️ by Atharva Sawant**  
 *"The developer who builds AI that convinces you to hire him!"* 😏
-
-```bash
-npx ai-atharva-cli
-``` 

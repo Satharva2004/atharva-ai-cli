@@ -5,11 +5,12 @@ const figlet = require('figlet');
 const gradient = require('gradient-string');
 const inquirer = require('inquirer');
 const ora = require('ora');
+require('dotenv').config();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const resumeData = require('../lib/data/resume');
 
 // Initialize Gemini AI
-const genAI = new GoogleGenerativeAI('AIzaSyBO73ex-fl54Kidn4J0Lhy-F8RHOprWy8Q');
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
 // AI Personality Configuration
@@ -365,20 +366,16 @@ class AIAtharvaClient {
   async showSplashScreen() {
     console.clear();
     
-    // Create pixelated >ATHARVA-CLI header with same gradient style
+        // Create pixelated ATHARVA-CLI header
     const atharvaHeader = `
- ▄████████▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-█         █                                                                █
-█         █   ► ATHARVA-CLI                                                █
-█         █                                                                █
-█         █   AI-POWERED INTERACTIVE RESUME                                █
-█         █   BUILT WITH GOOGLE GEMINI                                     █
-█         █                                                                █
-█         █   Use slash commands: /resume /skills /contact /github         █
-█         █   Ask questions: "Tell me about Node.js" or "Why hire him?"    █
- ▀████████▀ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-`;
-    
+██╗       █████╗ ████████╗██╗  ██╗ █████╗ ██████╗ ██╗   ██╗ █████╗                ██████╗██╗     ██╗
+╚██╗     ██╔══██╗╚══██╔══╝██║  ██║██╔══██╗██╔══██╗██║   ██║██╔══██╗              ██╔════╝██║     ██║
+ ╚██╗    ███████║   ██║   ███████║███████║██████╔╝██║   ██║███████║    █████╗    ██║     ██║     ██║
+ ██╔╝    ██╔══██║   ██║   ██╔══██║██╔══██║██╔══██╗╚██╗ ██╔╝██╔══██║    ╚════╝    ██║     ██║     ██║
+██╔╝     ██║  ██║   ██║   ██║  ██║██║  ██║██║  ██║ ╚████╔╝ ██║  ██║              ╚██████╗███████╗██║
+╚═╝      ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝               ╚═════╝╚══════╝╚═╝
+    `;
+
     console.log(gradient(['#00D4FF', '#7B68EE', '#9370DB'])(atharvaHeader));
     await AnimationEngine.sleep(800);
   }
