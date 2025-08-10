@@ -1,152 +1,142 @@
-# 🤖 AI-ATHARVA CLI
+# 🚀 Collaborative Notes CLI
 
-![Version](https://img.shields.io/npm/v/ai-atharva-cli?style=for-the-badge&logo=npm&color=red)
-![Downloads](https://img.shields.io/npm/dt/ai-atharva-cli?style=for-the-badge&logo=npm&color=blue)
-![GitHub Stars](https://img.shields.io/github/stars/Satharva2004/atharva-ai-cli?style=for-the-badge&logo=github&color=yellow)
-![License](https://img.shields.io/github/license/Satharva2004/atharva-ai-cli?style=for-the-badge&color=green)
-
-> **The most interactive, AI-powered resume CLI in the universe!** 🚀
-
-Meet AI-ATHARVA: The sarcastic AI that's programmed with one mission - convince you that Atharva Sawant is your next star hire!
+A powerful collaborative notes application with AI integration, real-time collaboration, and rich document features. Your terminal-based Notion alternative!
 
 ## ✨ Features
 
-![image](https://github.com/user-attachments/assets/70341184-8d43-4bae-a19a-9c8478a430ac)
-
-- 🤖 **AI-Powered Responses** - Comprehensive technical explanations with real-world context
-- 🎨 **Stunning Animations** - Matrix effects, progress bars, fireworks, and ASCII art
-- 📚 **Educational Content** - Learn about technologies while exploring my expertise
-- ⚡ **Slash Commands** - Quick access to specific information
-- 🎭 **Sarcastic AI Personality** - Entertainment meets professional showcase
+- **🤝 Real-time Collaboration** - Multiple users can edit notes simultaneously
+- **🤖 AI-Powered Summaries** - Generate intelligent summaries using Gemini AI
+- **🎭 Cool User Names** - Get awesome names like Neo, Gandalf, Iron Man, etc.
+- **📋 Todo Lists** - Add and manage checkbox todo items
+- **📋 Document Management** - Copy, share, and track document dates
+- **🔗 Shareable Rooms** - Easy room sharing with unique links
+- **📱 Simple Commands** - Use `notes` command for quick access
 
 ## 🚀 Quick Start
 
-### Install & Run
+### Prerequisites
+- Node.js 14+ 
+- Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+### Installation
+
 ```bash
-# Install globally
-npm install -g ai-atharva-cli
+# Clone the repository
+git clone https://github.com/yourusername/collaborative-notes-cli.git
+cd collaborative-notes-cli
 
-# Run the CLI
-ai-atharva
-```
-
-### Or use NPX
-```bash
-npx ai-atharva-cli
-```
-
-## 🎮 Commands
-
-### Slash Commands
-| Command | Description |
-|---------|-------------|
-| `/resume` | 📄 Download resume and contact options |
-| `/skills` | 🛠️ Complete technical skills breakdown |
-| `/contact` | 📞 Professional contact information |
-| `/github` | 🐙 GitHub profile and repository showcase |
-| `/linkedin` | 💼 LinkedIn profile highlights |
-| `/achievements` | 🏆 Competition wins and recognition |
-| `/projects` | 🚀 Complete project portfolio |
-| `/experience` | 💼 Professional work experience |
-| `/education` | 🎓 Academic background |
-| `/help` | ❓ Complete command guide |
-
-### AI-Powered Questions
-Ask about any technology and get comprehensive explanations:
-- "What is Node.js?"
-- "Tell me about React.js"
-- "Explain Python programming"
-- "What is AI/ML?"
-- "How does RAG work?"
-
-## 🛠️ Build Your Own
-
-Want to create your own AI-powered resume CLI?
-
-1. **Fork & Clone**
-```bash
-git clone https://github.com/Satharva2004/atharva-ai-cli.git
-cd atharva-ai-cli
+# Install dependencies
 npm install
+
+# Create .env file
+echo "GEMINI_API_KEY=your_api_key_here" > .env
+
+# Install globally (optional)
+npm install -g .
 ```
 
-2. **Setup Environment Variables**
-Create a `.env` file in the root directory:
+### Usage
+
 ```bash
-GEMINI_API_KEY=your_gemini_api_key_here
+# Interactive mode
+notes
+
+# Start server
+notes server
+
+# Join/create room
+notes meeting-notes
+notes client brainstorm
+
+# Quick room join
+notes weekly-review
 ```
 
-3. **Customize Data**
-Edit `lib/data/resume.js` with your information:
-```javascript
-const resumeData = {
-  personal: {
-    name: "Your Name",
-    email: "your.email@gmail.com",
-    // ... your details
-  },
-  skills: {
-    languages: {
-      expert: ["JavaScript", "Python"],
-      // ... your skills
-    }
-  }
-  // ... customize everything
-};
-```
+## 🔧 Commands
 
-4. **Update Package**
-Edit `package.json`:
-```json
-{
-  "name": "your-ai-cli-name",
-  "bin": {
-    "your-command": "./bin/cli.js"
-  }
-}
-```
+### Client Commands
+- `/summarize` - Generate AI summary of notes
+- `/copy` - Copy document to clipboard
+- `/share` - Show shareable room link
+- `/date` - Show room creation/update dates
+- `/todo` - Add checkbox todo item
+- `/help` - Show available commands
+- `/exit` - Leave room and disconnect
 
-5. **Publish**
+### Server Commands
+- `notes server` - Start WebSocket server
+- `notes client <room>` - Join/create a room
+- `notes <room>` - Quick room join
+
+## 🌐 Deployment
+
+### Vercel Deployment
+
 ```bash
-npm login
-npm publish
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy to Vercel
+vercel --prod
+
+# Or use npm script
+npm run deploy
 ```
 
-## 🎯 Tech Stack
+### Environment Variables
+Set these in your Vercel dashboard:
+- `GEMINI_API_KEY` - Your Gemini API key
 
-| Category | Technologies |
-|----------|-------------|
-| Languages | 🟨 JavaScript, 🐍 Python, 🔷 TypeScript |
-| Frontend | ⚛️ React, 🔥 SvelteKit, 🌐 HTML/CSS |
-| Backend | 🟢 Node.js, ⚡ Express, 🚀 FastAPI |
-| AI/ML | 🤖 TensorFlow, 🧠 PyTorch, 🔍 RAG |
-| Cloud | ☁️ AWS, 🌐 Netlify, ⚡ Vercel |
+## 🏗️ Architecture
 
-## 📞 Contact Atharva
+- **WebSocket Server** - Real-time communication
+- **Room Management** - Dynamic room creation and management
+- **AI Integration** - Gemini AI for smart summaries
+- **Todo System** - Collaborative task management
+- **User Management** - Cool auto-generated usernames
 
-Ready to hire for Summer 2025?
+## 📁 Project Structure
 
-- **Email**: [satharva2004@gmail.com](mailto:satharva2004@gmail.com)
-- **LinkedIn**: [Atharva Sawant](https://www.linkedin.com/in/satharva2004/)
-- **GitHub**: [Satharva2004](https://github.com/Satharva2004)
-
-## 🏆 Highlights
-
-- 🥈 AI Odyssey 2024 - 2nd place nationally
-- 👑 Top 25/1000+ intern at Meta Craftlab
-- 📚 Published research at IGI Global
-- 📈 1000+ LinkedIn follower growth
-- 🚀 25+ GitHub repositories
+```
+collaborative-notes-cli/
+├── bin/
+│   └── cli.js          # CLI command handler
+├── lib/
+│   ├── commands/        # Command implementations
+│   ├── data/           # Data models
+│   ├── responses/      # AI response handling
+│   └── utils/          # Utility functions
+├── server.js           # WebSocket server
+├── client.js           # Client implementation
+├── index.js            # Main entry point
+├── vercel.json         # Vercel configuration
+└── package.json        # Dependencies and scripts
+```
 
 ## 🤝 Contributing
 
-Contributions welcome! Please read our contributing guidelines and submit pull requests.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## 📄 License
+## 📝 License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with Node.js and WebSockets
+- AI powered by Google Gemini
+- Inspired by collaborative tools like Notion and Google Docs
+
+## 📞 Support
+
+- Create an issue for bugs or feature requests
+- Check the [documentation](docs/) for detailed guides
+- Join our community discussions
 
 ---
 
-**Made with ❤️ by Atharva Sawant**  
-*"The developer who builds AI that convinces you to hire him!"* 😏
+Made with ❤️ for productive collaboration!
