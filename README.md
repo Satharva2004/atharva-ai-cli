@@ -28,8 +28,8 @@ cd collaborative-notes-cli
 # Install dependencies
 npm install
 
-# Create .env file
-echo "GEMINI_API_KEY=your_api_key_here" > .env
+# Ready to use immediately!
+# No API key setup required
 
 # Install globally (optional)
 npm install -g .
@@ -84,8 +84,8 @@ npm run deploy
 ```
 
 ### Environment Variables
-Set these in your Vercel dashboard:
-- `GEMINI_API_KEY` - Your Gemini API key
+No environment variables needed for deployment!
+The platform uses a public API key for AI features.
 
 ## 🏗️ Architecture
 

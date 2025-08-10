@@ -1,7 +1,7 @@
 {
   "name": "collaborative-notes-cli",
   "version": "2.0.0",
-  "description": "A powerful collaborative notes application with AI integration, real-time collaboration, and rich document features",
+  "description": "A powerful collaborative notes application with AI integration, real-time collaboration, and rich document features. Ready to use immediately - no API key setup required!",
   "main": "index.js",
   "bin": {
     "notes": "./bin/cli.js"

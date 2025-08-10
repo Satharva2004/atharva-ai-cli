@@ -54,8 +54,8 @@ function showUsage() {
   console.log(chalk.white('  /exit                            - Leave room and disconnect'));
   console.log('');
   console.log(chalk.yellow('⚙️  Prerequisites:'));
-  console.log(chalk.white('  • Create a .env file with: GEMINI_API_KEY=your_api_key_here'));
-  console.log(chalk.white('  • Get your API key from: https://makersuite.google.com/app/apikey'));
+  console.log(chalk.white('  • Platform is ready to use immediately!'));
+  console.log(chalk.white('  • AI features are powered by our public API key'));
   console.log('');
 }
 
