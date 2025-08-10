@@ -112,6 +112,7 @@ class CollaborativeNoteClient {
         break;
         
       case 'document_update':
+        // Only process updates from other users to prevent double lettering
         if (clientId !== this.clientId) {
           this.doc = content;
           console.log(chalk.cyan(`\n📝 ${userName || 'Unknown'} updated the document`));
@@ -120,6 +121,7 @@ class CollaborativeNoteClient {
         break;
         
       case 'todo_added':
+        // Only process todos from other users to prevent duplicates
         if (clientId !== this.clientId) {
           this.todos.push(todo);
           console.log(chalk.green(`\n✅ ${userName || 'Unknown'} added todo: ${todo.text}`));
@@ -128,6 +130,7 @@ class CollaborativeNoteClient {
         break;
 
       case 'todo_updated':
+        // Only process todo updates from other users
         if (clientId !== this.clientId) {
           const existingTodo = this.todos.find(t => t.id === todo.id);
           if (existingTodo) {
@@ -192,10 +195,15 @@ class CollaborativeNoteClient {
       } else if (text) {
         this.handleText(text);
       }
+      // Don't show any prompt for empty lines - just continue
     });
 
     this.rl.on('close', () => {
       this.cleanup();
+    });
+
+    this.rl.on('error', (error) => {
+      console.error(chalk.red('❌ Terminal error:', error.message));
     });
   }
 
@@ -281,9 +289,19 @@ class CollaborativeNoteClient {
       case '/todo':
         console.log(chalk.blue('\n📝 Add Todo Item:'));
         console.log(chalk.yellow('💡 Type your todo item and press Enter:'));
-        this.rl.question(chalk.cyan('> '), (todoText) => {
+        
+        // Create a temporary readline interface for todo input
+        const todoRl = readline.createInterface({
+          input: process.stdin,
+          output: process.stdout
+        });
+        
+        todoRl.question(chalk.cyan('> '), (todoText) => {
+          todoRl.close();
           if (todoText.trim()) {
             this.addTodo(todoText.trim());
+          } else {
+            console.log(chalk.yellow('⚠️ Todo text cannot be empty'));
           }
         });
         return; // Don't show prompt again
@@ -317,6 +335,8 @@ class CollaborativeNoteClient {
       default:
         console.log(chalk.yellow(`⚠️ Unknown command: ${cmd}`));
         console.log(chalk.blue(`💡 Available commands: /summarize, /copy, /share, /date, /todo, /exit, /help, /clear, /status, /users, /room`));
+        console.log(chalk.gray(`💡 Tip: Commands must start with "/" (e.g., /help)`));
+        break;
     }
   }
 
@@ -353,6 +373,11 @@ class CollaborativeNoteClient {
   handleText(text) {
     if (!this.connected) {
       console.log(chalk.red('❌ Not connected to server'));
+      return;
+    }
+
+    // Prevent empty text updates
+    if (!text || text.trim() === '') {
       return;
     }
 

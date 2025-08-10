@@ -169,7 +169,7 @@ class CollaborativeNoteServer {
       }
     }));
 
-    // Notify other clients in the room
+    // Notify other clients in the room about the new user
     this.broadcastToRoom(room, {
       type: 'user_joined',
       clientId,
@@ -177,7 +177,7 @@ class CollaborativeNoteServer {
       userCount: roomData.users.size
     }, ws);
 
-    // Send room info update
+    // Send updated room info to all clients (including the new one)
     this.broadcastRoomInfo(room);
 
     console.log(`👤 ${finalUserName} joined "${room}" (${roomData.users.size} users)`);
@@ -187,6 +187,11 @@ class CollaborativeNoteServer {
     const roomData = this.rooms.get(room);
     if (!roomData) {
       this.sendError(ws, `Room "${room}" not found`);
+      return;
+    }
+
+    // Prevent empty content updates
+    if (!content || content.trim() === '') {
       return;
     }
 
